@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اطلاعات دستگاه</title>
+</head>
+<body>
+  <h2>اطلاعات دستگاه شما</h2>
+  <pre id="info">در حال بررسی...</pre>
+
+  <script>
+    const info = {
+      "مرورگر": navigator.userAgent,
+      "سیستم‌عامل احتمالی": navigator.platform,
+      "زبان": navigator.language,
+      "اندازه صفحه": screen.width + " × " + screen.height,
+      "تعداد هسته‌های پردازنده اعلام‌شده":
+        navigator.hardwareConcurrency || "نامشخص",
+      "حافظه تقریبی اعلام‌شده (GB)":
+        navigator.deviceMemory || "نامشخص"
+    };
+
+    document.getElementById("info").textContent =
+      JSON.stringify(info, null, 2);
+  </script>
+</body>
+</html>
